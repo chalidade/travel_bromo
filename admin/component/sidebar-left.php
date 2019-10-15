@@ -40,8 +40,8 @@
             </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="home.php?id=">Input Booking</a></li>
-          <li><a href="home.php?id=">Data Booking</a></li>
+          <li><a href="home.php?id=input_booking">Input Booking</a></li>
+          <li><a href="home.php?id=data_booking">Data Booking</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -51,8 +51,7 @@
             </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="home.php?id=">Data Pembayaran</a></li>
-          <li><a href="home.php?id=">Konfirmasi Pembayaran</a></li>
+          <li><a href="home.php?id=data_pembayaran">Data Pembayaran</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -63,7 +62,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="home.php?id=input_paket">Input Paket</a></li>
-          <li><a href="home.php?id=">Data Paket</a></li>
+          <li><a href="home.php?id=data_paket">Data Paket</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -74,7 +73,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="home.php?id=input_hotel">Input Hotel</a></li>
-          <li><a href="home.php?id=">Data Hotel</a></li>
+          <li><a href="home.php?id=data_hotel">Data Hotel</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -85,7 +84,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="home.php?id=input_user">Input User</a></li>
-          <li><a href="home.php?id=">Data User</a></li>
+          <li><a href="home.php?id=data_user">Data User</a></li>
         </ul>
       </li>
       <li><a href="index.php"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
