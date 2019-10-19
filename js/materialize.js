@@ -3060,11 +3060,11 @@ $jscomp.polyfill = function (e, r, p, m) {
 
         // Set initial styles
         $.extend(this.el.style, {
-          display: 'block',
+          display: 'inline-table',
           opacity: 0
         });
         $.extend(this.$overlay[0].style, {
-          display: 'block',
+          display: 'inline-table',
           opacity: 0
         });
 

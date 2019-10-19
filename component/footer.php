@@ -8,6 +8,30 @@ $('.datepicker').datepicker();
 });
 
 $(document).ready(function(){
+   $('#traveler').modal();
+ });
+
+ $(document).ready(function(){
+    $('#duration').modal();
+  });
+
+  $(document).ready(function(){
+     $('#destination').modal();
+   });
+
+   $(document).ready(function(){
+    $('input.autocomplete').autocomplete({
+      data: {
+        "Bromo Mountain": null,
+        "Madakaripura Waterfall": null,
+        "Ranu Agung": null,
+        "Pekalen River Rafting": null,
+        "Gili ketapang island": null
+      },
+    });
+  });
+
+$(document).ready(function(){
   $(window).scroll(function(){
   	var scroll = $(window).scrollTop();
 	  if (scroll > 100) {
