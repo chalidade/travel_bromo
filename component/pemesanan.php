@@ -3,6 +3,7 @@
     <div class="col s3"></div>
     <div class="col s6 white" style="border-radius:20px;box-shadow: 0px 5px 12px #c0c0c03d;">
       <div class="row" style="padding:20px;font-size:12px;font-weight:800;margin-bottom: 0px;">
+        <form class="" action="form_pemesanan.php" method="post">
         <div class="col s3">
           DESTINATION
           <input type="text" name="destination" class="modal-trigger" href="#destination" style="width:90%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;" value="Bromo Mountain">
@@ -13,12 +14,13 @@
         </div>
         <div class="col s3">
           DURATION
-          <input type="text" name="duration" class="modal-trigger" href="#duration" style="width:90%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;" value="1 Day">
+          <input type="text" id="durationform" name="duration" class="modal-trigger" href="#duration" style="width:90%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;" value="1 Day">
         </div>
         <div class="col s3">
         <br>
           <input type="submit" name="duration" value="Let's Go" style="margin-top:10px;text-align:center;margin-top:5px;background:#42a5f5 ;color:#fff;border-radius:20px;font-size:10px;height: 30px;border: none;width:100%">
         </div>
+      </form>
       </div>
     </div>
     <div class="col s3"></div>
@@ -150,12 +152,13 @@
 
 
   <!-- Modal Structure -->
-  <div id="duration" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+  <div id="duration" class="modal" style="display: inline-table;">
+    <div class="modal-content" style="padding:20px;padding-left: 40px;padding-right: 40px;padding-top: 30px;height:450px">
+      <h6 style="font-weight:800">TRAVELERS</h6>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" id="daterange" name="daterange" placeholder="Select Date" style="width:95%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;"/>
+          </div>
+        </div>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
+</div>
