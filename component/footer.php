@@ -62,6 +62,46 @@ $(document).ready(function(){
 	  }
   })
 })
+
+function personInc()
+{
+    var value = parseInt(document.getElementById('personCount').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('personCount').value = value;
+}
+
+function personDec()
+{
+    var value = parseInt(document.getElementById('personCount').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value <= 0) {
+      value = 0;
+    } else {
+      value--;
+    }
+    document.getElementById('personCount').value = value;
+}
+
+function childInc()
+{
+    var value = parseInt(document.getElementById('childCount').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('childCount').value = value;
+}
+
+function childDec()
+{
+    var value = parseInt(document.getElementById('childCount').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value <= 0) {
+      value = 0;
+    } else {
+      value--;
+    }
+    document.getElementById('childCount').value = value;
+}
 </script>
 </body>
 </html>

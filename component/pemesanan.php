@@ -46,11 +46,29 @@
                   <font style="font-size:8px;font-weight:100px;color:#d4d4d4">(Age 12 and over)</font></p>
               </div>
               <div class="col s4">
-
+                <table style="margin-top:10px;margin-left:-10px;">
+                  <tr style="border-bottom: 0px;">
+                    <td style="padding:0px">
+                      <center>
+                        <input onclick="personDec()" value="-" class=" blue-grey darken-2" style="margin-top:2px;color:#fff;padding:2px;padding-right: 2px;font-size:12px;border-radius:20px;width: 12px;height: 10px;text-align: center;padding-bottom: 4px;"/>
+                      </center>
+                    </td>
+                    <td style="padding:0px">
+                      <center>
+                      <input type="text" id="personCount" value="0" class="blue lighten-2" style="color:#fff;padding:2px;padding-right: 2px;font-size:8px;border-radius:20px;width: 12px;height: 10px;text-align: center;padding-bottom: 4px;"/>
+                      </center>
+                    </td>
+                    <td style="padding:0px">
+                      <center>
+                      <input onclick="personInc()" value="+" class=" blue-grey darken-2" style="margin-top:2px;color:#fff;padding:2px;padding-right: 2px;font-size:12px;border-radius:20px;width: 12px;height: 10px;text-align: center;padding-bottom: 4px;"/>
+                    </center>
+                    </td>
+                  </tr>
+                </table>
+                </div>
               </div>
             </div>
           </div>
-         </div>
         <div class="col s6">
           <div class="" style="width:95%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 40px;border: none;">
             <div class="row">
@@ -62,7 +80,25 @@
                   <font style="font-size:8px;font-weight:100px;color:#d4d4d4">(Age 2 - 10)</font></p>
               </div>
               <div class="col s4">
-
+                <table style="margin-top:10px;margin-left:-10px;">
+                  <tr style="border-bottom: 0px;">
+                    <td style="padding:0px">
+                      <center>
+                        <input onclick="childDec()" value="-" class=" blue-grey darken-2" style="margin-top:2px;color:#fff;padding:2px;padding-right: 2px;font-size:12px;border-radius:20px;width: 12px;height: 10px;text-align: center;padding-bottom: 4px;"/>
+                      </center>
+                    </td>
+                    <td style="padding:0px">
+                      <center>
+                      <input type="text" id="childCount" value="0" class="blue lighten-2" style="color:#fff;padding:2px;padding-right: 2px;font-size:8px;border-radius:20px;width: 12px;height: 10px;text-align: center;padding-bottom: 4px;"/>
+                      </center>
+                    </td>
+                    <td style="padding:0px">
+                      <center>
+                      <input onclick="childInc()" value="+" class=" blue-grey darken-2" style="margin-top:2px;color:#fff;padding:2px;padding-right: 2px;font-size:12px;border-radius:20px;width: 12px;height: 10px;text-align: center;padding-bottom: 4px;"/>
+                    </center>
+                    </td>
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
@@ -72,7 +108,7 @@
       <div class="row">
         <div class="col s12">
         <center>
-          <input type="submit" name="duration" value="Done" style="margin-top:20px;text-align:center;background:#42a5f5 ;color:#fff;border-radius:20px;font-size:10px;height: 30px;border: none;width:30%">
+          <!-- <input type="submit" name="duration" value="Done" style="margin-top:20px;text-align:center;background:#42a5f5 ;color:#fff;border-radius:20px;font-size:10px;height: 30px;border: none;width:30%"> -->
         </center>
         </div>
       </div>
