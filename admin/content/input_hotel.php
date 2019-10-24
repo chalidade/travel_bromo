@@ -12,35 +12,39 @@
   <section class="content container-fluid">
     <!-- Small boxes (Stat box) -->
     <div class="row">
-      <div class="col-lg-12 col-xs-6">
+      <div class="col-lg-12 col-xs-12">
         <div class="box box-primary" style="padding:10px;">
                 <div class="box-header with-border">
                   <h3 class="box-title">Input New Hotel</h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
+                <form role="form" action="proses/route.php?page=input_hotel" method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="action" value="save">
+                  <input type="hidden" name="table" value="hotel">
+                  <input type="hidden" name="data[]" value="">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="name">Hotel Name</label>
-                      <input type="text" class="form-control" id="name" placeholder="Hotel Name ..">
+                      <input type="text" class="form-control" name="data[]" id="name" placeholder="Hotel Name ..">
                     </div>
                     <div class="form-group">
                       <label>Hotel Description</label>
-                      <textarea class="form-control" rows="4" placeholder="Hotel Description .."></textarea>
+                      <textarea class="form-control" rows="4" name="data[]" placeholder="Hotel Description .."></textarea>
                     </div>
                     <div class="form-group">
                       <label for="address">Hotel Address</label>
-                      <input type="text" class="form-control" id="address" placeholder="Hotel Name ..">
+                      <input type="text" class="form-control" name="data[]" id="address" placeholder="Hotel Name ..">
                     </div>
                     <div class="form-group">
                       <label for="phone">Phone Number</label>
-                      <input type="number" class="form-control" id="phone" placeholder="Hotel Name ..">
+                      <input type="number" class="form-control" name="data[]" id="phone" placeholder="Hotel Name ..">
                     </div>
                     <div class="form-group">
                       <label for="phone">Photo</label>
+                      <input type="hidden" name="data[]" value="">
                       <label for="file" style="border:solid 1px #242424;width:100%;padding:10px">Upload Photo</label>
-                      <input type="file" class="form-control" id="file" style="display:none">
+                      <input type="file" class="form-control" name="photo" id="file" style="display:none">
                     </div>
                   </div>
                   <!-- /.box-body -->

@@ -12,7 +12,7 @@
   <section class="content container-fluid">
     <!-- Small boxes (Stat box) -->
     <div class="row">
-      <div class="col-lg-12 col-xs-6">
+      <div class="col-lg-12 col-xs-12">
         <div class="box box-primary" style="padding:10px;">
             <div class="box-header with-border">
               <h3 class="box-title">Data Booking</h3>
@@ -31,156 +31,26 @@
                     </tr>
                     </thead>
                     <tbody>
+                      <?php
+                        include "proses/koneksi.php";
+                        $no = 1;
+                        $query = mysqli_query($connect, "SELECT * FROM `booking`");
+                        while ($booking = mysqli_fetch_array($query)) {
+                      ?>
                       <tr role="row" class="odd">
-                      <td class="">1</td>
-                      <td class="">Wisata Bromo</td>
-                      <td class="">3 Person</td>
-                      <td class="">Chalid</td>
-                      <td class="">0857123345</td>
-                      <td class="sorting_1">Rp 350.000</td>
+                      <td class=""><?php echo $no;$no++; ?></td>
+                      <td class=""><?php echo $booking["name"]; ?></td>
+                      <td class=""><?php echo $booking["person"]; ?> Person</td>
+                      <td class=""><?php echo $booking["leader"]; ?></td>
+                      <td class=""><?php echo $booking["phone"]; ?></td>
+                      <td class="sorting_1">Rp <?php echo $booking["payment"]; ?></td>
                       <td class="">
                         <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <button type="button" class="btn btn-danger" name="button">Delete</button>
+                        <a href="proses/delete.php?data=booking&id=<?php echo $booking['id']; ?>&page=data_booking" type="button" class="btn btn-danger" name="button">Delete</a>
                       </td>
-                    </tr><tr role="row" class="even">
-                      <td class="">2</td>
-                      <td class="">Wisata Bromo</td>
-                      <td class="">3 Person</td>
-                      <td class="">Ade</td>
-                      <td class="">0857123345</td>
-                      <td class="sorting_1">Rp 350.000</td>
-                      <td class="">
-                        <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <button type="button" class="btn btn-danger" name="button">Delete</button>
-                      </td>
-                    </tr><tr role="row" class="odd">
-                      <td class="">3</td>
-                      <td class="">Wisata Madakaripura</td>
-                      <td class="">6 Person</td>
-                      <td class="">Rahman</td>
-                      <td class="">0857123345</td>
-                      <td class="sorting_1">Rp 350.000</td>
-                      <td class="">
-                        <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <button type="button" class="btn btn-danger" name="button">Delete</button>
-                      </td>
-                    </tr><tr role="row" class="even">
-                      <td class="">4</td>
-                      <td class="">Wisata Madakaripura</td>
-                      <td class="">Lina</td>
-                      <td class="">OSX.4+</td>
-                      <td class="">0857123345</td>
-                      <td class="sorting_1">Rp 350.000</td>
-                      <td class="">
-                        <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <button type="button" class="btn btn-danger" name="button">Delete</button>
-                      </td></tr><tr role="row" class="odd">
-                      <td class="">5</td>
-                      <td class="">Wisata Ranu Agung</td>
-                      <td class="">3 Person</td>
-                      <td class="">Nur</td>
-                      <td class="">0857123345</td>
-                      <td class="sorting_1">Rp 350.000</td>
-                      <td class="">
-                        <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <button type="button" class="btn btn-danger" name="button">Delete</button>
-                      </td></tr><tr role="row" class="even">
-                      <td class="">6</td>
-                      <td class="">Wisata Bromo</td>
-                      <td class="">4 Person</td>
-                      <td class="">Fauziah</td>
-                      <td class="">0857123345</td>
-                      <td class="sorting_1">Rp 350.000</td>
-                      <td class="">
-                        <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <button type="button" class="btn btn-danger" name="button">Delete</button>
-                      </td></tr><tr role="row" class="odd">
-                      <td class="">7</td>
-                      <td class="">Wisata Ranu Agung</td>
-                      <td class="">2 Person</td>
-                      <td class="">Reno</td>
-                      <td class="">0857123345</td>
-                      <td class="sorting_1">Rp 350.000</td>
-                      <td class="">
-                        <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <button type="button" class="btn btn-danger" name="button">Delete</button>
-                      </td></tr><tr role="row" class="even">
-                      <td class="">8</td>
-                      <td class="">Wisata Ranu Agung</td>
-                      <td class="">3 Person</td>
-                      <td class="">Furkoni</td>
-                      <td class="">0857123345</td>
-                      <td class="sorting_1">Rp 350.000</td>
-                      <td class="">
-                        <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <button type="button" class="btn btn-danger" name="button">Delete</button>
-                      </td></tr><tr role="row" class="odd">
-                      <td class="">9</td>
-                      <td class="">Wisata Bromo</td>
-                      <td class="">4 Person</td>
-                      <td class="">Wahyu</td>
-                      <td class="">0857123345</td>
-                      <td class="sorting_1">Rp 350.000</td>
-                      <td class="">
-                        <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <button type="button" class="btn btn-danger" name="button">Delete</button>
-                      </td></tr><tr role="row" class="even">
-                      <td class="">10</td>
-                      <td class=""> Wisata Madakaripura</td>
-                      <td class="">5 Person</td>
-                      <td class="">Ardiansyah</td>
-                      <td class="">0857123345</td>
-                      <td class="sorting_1">Rp 350.000</td>
-                      <td class="">
-                        <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <button type="button" class="btn btn-danger" name="button">Delete</button>
-                      </td>
-                    </tr></tbody>
-                    <tfoot>
-                    <tr>
-                      <th rowspan="1" colspan="1">No</th>
-                      <th rowspan="1" colspan="1">Package Name</th>
-                      <th rowspan="1" colspan="1">Person</th>
-                      <th rowspan="1" colspan="1">Leader Name</th>
-                      <th rowspan="1" colspan="1">Phone Number</th>
-                      <th rowspan="1" colspan="1">Total Payment</th>
-                      <th rowspan="1" colspan="1">Option</th>
                     </tr>
-                    </tfoot>
+                    <?php } ?>
                   </table>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-5">
-                  <div class="dataTables_info" id="example2_info" role="status" aria-live="polite" style="padding-left: 10px;">Showing 1 to 10 of 57 entries</div>
-                </div>
-                <div class="col-sm-7">
-                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                    <ul class="pagination">
-                      <li class="paginate_button previous disabled" id="example2_previous">
-                        <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a>
-                      </li>
-                      <li class="paginate_button active">
-                        <a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a>
-                      </li>
-                      <li class="paginate_button ">
-                        <a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a>
-                      </li>
-                      <li class="paginate_button ">
-                        <a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a>
-                      </li>
-                      <li class="paginate_button ">
-                        <a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a>
-                      </li>
-                      <li class="paginate_button ">
-                        <a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a>
-                      </li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a>
-                      </li>
-                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </div>
