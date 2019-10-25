@@ -130,55 +130,20 @@
             <p style="font-weight:800;font-size:12px;">Choose More Destinaton</p>
           </div>
           <div class="row" >
+            <?php
+            include "admin/proses/koneksi.php";
+            $query = mysqli_query($connect, "SELECT * FROM `package`");
+            while ($data = mysqli_fetch_array($query)) {
+             ?>
             <div class="col s4" style="margin-top:10px;">
-              <div class="destination_bg" style="background:url('img/gunung_bromo2.jpg');width: 100%;height: 110px;border-radius: 20px;background-size: cover;">
-                  <p style="margin:0px;padding-top:60px;padding-left:10px;color:#fff;font-size:12px;font-weight:800">Bromo Mountain<br>
+              <div class="destination_bg" style="background:url('admin/proses/<?php echo $data['photo']; ?>');width: 100%;height: 110px;border-radius: 20px;background-size: cover;">
+                  <p style="margin:0px;padding-top:60px;padding-left:10px;color:#fff;font-size:12px;font-weight:800"><?php echo $data["name"]; ?><br>
                     <i class="material-icons" style="color:orange;font-size:9px;">star</i>
                     <font style="font-size:10px;margin-right:5px">4.5</font>
                   </p>
               </div>
             </div>
-            <div class="col s4" style="margin-top:15px;">
-              <div class="destination_bg" style="background:url('img/rafting.jpg');width: 100%;height: 110px;border-radius: 20px;background-size: cover;">
-                <p style="margin:0px;padding-top:60px;padding-left:10px;color:#fff;font-size:12px;font-weight:800">Rafting<br>
-                  <i class="material-icons" style="color:orange;font-size:9px;">star</i>
-                  <font style="font-size:10px;margin-right:5px">4.5</font>
-                </p>
-              </div>
-            </div>
-            <div class="col s4" style="margin-top:15px;">
-              <div class="destination_bg" style="background:url('img/gili_ketapang.jpg');width: 100%;height: 110px;border-radius: 20px;background-size: cover;">
-                <p style="margin:0px;padding-top:60px;padding-left:10px;color:#fff;font-size:12px;font-weight:800">Gili Ketapang<br>
-                  <i class="material-icons" style="color:orange;font-size:9px;">star</i>
-                  <font style="font-size:10px;margin-right:5px">4.5</font>
-                </p>
-              </div>
-            </div>
-
-            <div class="col s4" style="margin-top:15px;">
-              <div class="destination_bg" style="background:url('img/madakaripura.jpg');width: 100%;height: 110px;border-radius: 20px;background-size: cover;">
-                <p style="margin:0px;padding-top:60px;padding-left:10px;color:#fff;font-size:12px;font-weight:800">Madakaripura Waterfall<br>
-                  <i class="material-icons" style="color:orange;font-size:9px;">star</i>
-                  <font style="font-size:10px;margin-right:5px">4.5</font>
-                </p>
-              </div>
-            </div>
-            <div class="col s4" style="margin-top:15px;">
-              <div class="destination_bg" style="background:url('img/ranu_agung.jpg');width: 100%;height: 110px;border-radius: 20px;background-size: cover;">
-                <p style="margin:0px;padding-top:60px;padding-left:10px;color:#fff;font-size:12px;font-weight:800">Ranu Agung<br>
-                  <i class="material-icons" style="color:orange;font-size:9px;">star</i>
-                  <font style="font-size:10px;margin-right:5px">4.5</font>
-                </p>
-              </div>
-            </div>
-            <div class="col s4" style="margin-top:15px;">
-              <div class="destination_bg" style="background:url('img/gunung_bromo.png');width: 100%;height: 110px;border-radius: 20px;background-size: cover;">
-                <p style="margin:0px;padding-top:60px;padding-left:10px;color:#fff;font-size:12px;font-weight:800">Bromo Mountain<br>
-                  <i class="material-icons" style="color:orange;font-size:9px;">star</i>
-                  <font style="font-size:10px;margin-right:5px">4.5</font>
-                </p>
-              </div>
-            </div>
+          <?php } ?>
           </div>
         </div>
       </div>
