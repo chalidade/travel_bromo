@@ -33,6 +33,7 @@
                         $no = 1;
                         $query = mysqli_query($connect, "SELECT * FROM `hotel`");
                         while ($hotel = mysqli_fetch_array($query)) {
+                          $id = $hotel['id'];
                       ?>
                       <tr role="row" class="odd">
                       <td class=""><?php echo $no;$no++; ?></td>
@@ -40,8 +41,35 @@
                       <td class=""><?php echo $hotel["address"]; ?></td>
                       <td class=""><?php echo $hotel["phone"]; ?></td>
                       <td class="">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default<?php echo $id; ?>">View</button>
+                        <div class="modal fade" id="modal-default<?php echo $id; ?>">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title">Detail Hotel</h4>
+                            </div>
+                            <div class="modal-body" style="padding:20px">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <img src="proses/<?php echo $hotel["photo"]; ?>" style="width:100%">
+                                </div>
+                                <div class="col-md-6">
+                                    <h2 style="margin-top: 0px;"><?php echo $hotel["name"]; ?></h2>
+                                    <p style="font-size:12px"><?php echo $hotel["address"]; ?> | <?php echo $hotel["phone"]; ?></p>
+                                    <p style="font-size:12px"> <?php echo $hotel["description"]; ?></p>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+                          <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                      </div>
+                    </div>
                         <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <a href="proses/delete.php?data=hotel&id=<?php echo $hotel['id']; ?>&page=data_hotel" type="button" class="btn btn-danger" name="button">Delete</a>
+                        <a onclick="return confirm('Are you sure you want to delete this item?');" href="proses/delete.php?data=hotel&id=<?php echo $hotel['id']; ?>&page=data_hotel" type="button" class="btn btn-danger" name="button">Delete</a>
                       </td>
                     </tr>
                       <?php

@@ -36,6 +36,7 @@
                         $no = 1;
                         $query = mysqli_query($connect, "SELECT * FROM `booking`");
                         while ($booking = mysqli_fetch_array($query)) {
+                          $id   = $booking["id"];
                       ?>
                       <tr role="row" class="odd">
                       <td class=""><?php echo $no;$no++; ?></td>
@@ -45,8 +46,67 @@
                       <td class=""><?php echo $booking["phone"]; ?></td>
                       <td class="sorting_1">Rp <?php echo $booking["payment"]; ?></td>
                       <td class="">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default<?php echo $id; ?>">View</button>
+                        <div class="modal fade" id="modal-default<?php echo $id; ?>">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title">Detail Bookint</h4>
+                            </div>
+                            <div class="modal-body" style="padding:40px">
+                              <div class="row">
+                                <div class="col-md-3">
+                                  <b>Kode Booking</b>
+                                </div>
+                                <div class="col-md-9">
+                                  <?php echo rand(10,100);?>
+                                </div>
+                                <div class="col-md-3">
+                                  <b>Pakage Name</b>
+                                </div>
+                                <div class="col-md-9">
+                                  <?php echo $booking["name"]; ?>
+                                </div>
+                                <div class="col-md-3">
+                                  <b>Person</b>
+                                </div>
+                                <div class="col-md-9">
+                                  <?php echo $booking["person"]; ?> Person
+                                </div>
+                                <div class="col-md-3">
+                                <b>  Leader Name</b>
+                                </div>
+                                <div class="col-md-9">
+                                  <?php echo $booking["leader"]; ?>
+                                </div>
+                                <div class="col-md-3">
+                                  <b>Phone Number</b>
+                                </div>
+                                <div class="col-md-9">
+                                  <?php echo $booking["phone"]; ?>
+                                </div><div class="col-md-3">
+                                  <b>Payment</b>
+                                </div>
+                                <div class="col-md-9">
+                                  Rp <?php echo $booking["payment"]; ?>
+                                </div>
+                                <div class="col-md-3">
+                                  <b>Description</b>
+                                </div>
+                                <div class="col-md-9">
+                                  <?php echo $booking["description"]; ?>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                      </div>
                         <button type="button" class="btn btn-primary" name="button"> Edit</button>
-                        <a href="proses/delete.php?data=booking&id=<?php echo $booking['id']; ?>&page=data_booking" type="button" class="btn btn-danger" name="button">Delete</a>
+                        <a onclick="return confirm('Are you sure you want to delete this item?');" href="proses/delete.php?data=booking&id=<?php echo $booking['id']; ?>&page=data_booking" type="button" class="btn btn-danger" name="button">Delete</a>
                       </td>
                     </tr>
                     <?php } ?>

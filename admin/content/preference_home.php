@@ -18,18 +18,18 @@
                   <i class="fa fa-gear"></i><h3 class="box-title">Slider</h3>
                 </div>
                 <!-- /.box-header -->
-                <form role="form">
+                <form action="proses/slider.php" method="post" enctype="multipart/form-data">
                 <div class="row">
                   <div class="col-md-4">
                     <!-- form start -->
                       <div class="box-body">
                         <div class="form-group">
-                          <img src="../img/gunung_bromo.png" alt="" style="width:100%">
+                          <img src="<?php echo $home['slider1']; ?>" alt="" style="width:100%">
                           <label for="file1" style="border:solid 1px #242424;width:100%;padding:10px">Change Photo</label>
-                          <input type="file" class="form-control" id="file1" style="display:none">
+                          <input type="file" name="file1" class="form-control" id="file1" style="display:none">
                         </div>
                         <div class="form-group">
-                          <textarea class="form-control" rows="4" placeholder="Description .. "></textarea>
+                          <textarea class="form-control" name="desc1" rows="4" placeholder="Description .. "><?php echo $home['desc1']; ?></textarea>
                         </div>
                       </div>
                       <!-- /.box-body -->
@@ -38,12 +38,12 @@
                     <!-- form start -->
                       <div class="box-body">
                         <div class="form-group">
-                          <img src="../img/gunung_bromo.png" alt="" style="width:100%">
+                          <img src="<?php echo $home['slider2']; ?>" alt="" style="width:100%">
                           <label for="file2" style="border:solid 1px #242424;width:100%;padding:10px">Change Photo</label>
-                          <input type="file" class="form-control" id="file2" style="display:none">
+                          <input type="file" name="file2" class="form-control" id="file2" style="display:none">
                         </div>
                         <div class="form-group">
-                          <textarea class="form-control" rows="4" placeholder="Description .. "></textarea>
+                          <textarea class="form-control" name="desc2" rows="4" placeholder="Description .. "><?php echo $home['desc2']; ?></textarea>
                         </div>
                       </div>
                       <!-- /.box-body -->
@@ -52,12 +52,12 @@
                     <!-- form start -->
                       <div class="box-body">
                         <div class="form-group">
-                          <img src="../img/gunung_bromo.png" alt="" style="width:100%">
+                          <img src="<?php echo $home['slider3']; ?>" alt="" style="width:100%">
                           <label for="file3" style="border:solid 1px #242424;width:100%;padding:10px">Change Photo</label>
-                          <input type="file" class="form-control" id="file3" style="display:none">
+                          <input type="file" name="file3" class="form-control" id="file3" style="display:none">
                         </div>
                         <div class="form-group">
-                          <textarea class="form-control" rows="4" placeholder="Description .. "></textarea>
+                          <textarea class="form-control" name="desc3" rows="4" placeholder="Description .. "><?php echo $home['desc3']; ?></textarea>
                         </div>
                       </div>
                       <!-- /.box-body -->
