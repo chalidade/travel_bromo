@@ -1,5 +1,8 @@
+<?php
+include "component/header.php";
+?>
 <!-- Navigation -->
-<div class="nav" style="z-index:99;height: 70px;">
+<div class="nav2" style="z-index: 99; height: 70px; background: rgb(1, 87, 155);">
   <div class="row" style="margin-bottom:0px">
     <div class="col s2">
       <img src="img/logo.png" style="width:120px;margin-top:10px" alt="">
@@ -43,3 +46,25 @@
   </div>
 </div>
 <!-- End Navigation -->
+
+<div class="" style="margin-top:160px"></div>
+<div class="tour-package" style="text-align:center;margin-top:50px">
+  <h5 style="font-weight:800">Our Happy Customers</h5>
+  <hr style="width:30%;color:grey;border:1px thin">
+  <div class="row" style="margin-top:70px;padding:80px;padding-top:0px">
+    <?php
+    include "admin/proses/koneksi.php";
+    $query = mysqli_query($connect, "SELECT * FROM `gallery`");
+    while ($data = mysqli_fetch_array($query)) {
+     ?>
+    <div class="col s4" style="border-radius:10px;margin-top:10px;margin-bottom:10px">
+      <div class="package" style="border-radius:10px">
+        <div id="myImg" class="fotoPaket" style="height:250px;border-radius: 10px;background:url('admin/proses/<?php echo $data['photo']; ?>');background-size:cover"></div>
+      </div>
+      </a>
+    </div>
+    <?php } ?>
+  </div>
+</div>
+
+<?php include "component/footer.php"; ?>

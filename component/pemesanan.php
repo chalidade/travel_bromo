@@ -6,21 +6,24 @@
         <form class="" action="form_pemesanan.php" method="post">
         <div class="col s3">
           DESTINATION
-          <input type="text" name="destination" class="modal-trigger" href="#destination" style="width:90%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;" value="Bromo Mountain">
+          <input type="text" id="dest" name="destination" class="modal-trigger" href="#destination" style="width:90%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;" value="Your Destination">
         </div>
         <div class="col s3">
           TRAVELERS
-          <input type="text" class="modal-trigger" href="#traveler" style="width:90%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;" value="2 Person">
+          <input type="text" id="person" name="person" class="modal-trigger" href="#traveler" style="width:90%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;" value="2 Person">
+          <input type="hidden" id="adult" name="adult">
+          <input type="hidden" id="child" name="child">
         </div>
         <div class="col s3">
           DURATION
-          <input type="text" id="durationform" name="duration" class="modal-trigger" href="#duration" style="width:90%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;" value="1 Day">
+          <input type="text" id="durationform" name="durasi" class="modal-trigger" href="#duration" style="width:90%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;" value="1 Day">
+          <input type="hidden" id="penjemputan" name="penjemputan">
+          <input type="hidden" id="berangkat" name="berangkat" value="">
         </div>
         <div class="col s3">
         <br>
           <input type="submit" name="duration" value="Let's Go" style="margin-top:10px;text-align:center;margin-top:5px;background:#42a5f5 ;color:#fff;border-radius:20px;font-size:10px;height: 30px;border: none;width:100%">
         </div>
-      </form>
       </div>
     </div>
     <div class="col s3"></div>
@@ -33,7 +36,7 @@
       <h6 style="font-weight:800">TRAVELERS</h6>
         <div class="row">
           <div class="input-field col s12">
-            <input placeholder="Find Your Destinaton" type="text" style="width:95%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;" class="autocomplete">
+            <input id="personOrder" type="text" style="width:95%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;" class="autocomplete">
           </div>
         <div class="col s6">
           <div class="" style="width:95%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 40px;border: none;">
@@ -136,6 +139,7 @@
             while ($data = mysqli_fetch_array($query)) {
              ?>
             <div class="col s4" style="margin-top:10px;">
+              <input type="checkbox" name="desti[]" value="<?php echo $data['id']; ?>" style="opacity:1;pointer-events: unset;margin-top:10px;margin-left:10px">
               <div class="destination_bg" style="background:url('admin/proses/<?php echo $data['photo']; ?>');width: 100%;height: 110px;border-radius: 20px;background-size: cover;">
                   <p style="margin:0px;padding-top:60px;padding-left:10px;color:#fff;font-size:12px;font-weight:800"><?php echo $data["name"]; ?><br>
                     <i class="material-icons" style="color:orange;font-size:9px;">star</i>
@@ -144,6 +148,7 @@
               </div>
             </div>
           <?php } ?>
+          </form>
           </div>
         </div>
       </div>
@@ -158,6 +163,9 @@
       <h6 style="font-weight:800">TRAVELERS</h6>
         <div class="row">
           <div class="input-field col s12">
+            <input type="text" id="jemput" onchange="jemput()" name="penjemputan" placeholder="Penjemputan" style="width:95%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;"/>
+          </div>
+          <div class="input-field col s12" style="margin-top: -20px;">
             <input type="text" id="daterange" name="daterange" placeholder="Select Date" style="width:95%;margin-top:5px;background:#f5f5f5;border-radius:20px; padding-left:20px;font-size:10px;height: 30px;border: none;"/>
           </div>
         </div>

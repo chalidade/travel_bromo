@@ -17,7 +17,7 @@
               <td><i class="material-icons" style="color:orange;font-size:14px">star</i></td>
               <td>4,5</td>
               <td><i class="material-icons" style="color:gray;font-size:14px">people</i></td>
-              <td><font style="font-size:9px"><?php echo $data["person"]; ?> Person</font></td>
+              <td><font style="font-size:9px"><?php echo $data["person"]; ?></font></td>
               <td>IDR</td>
               <td><font style="font-weight: 800;"><?php echo $data["price"]; ?>K</font></td>
             </tr>
@@ -28,5 +28,5 @@
     <?php } ?>
     <div class="col s2"></div>
   </div>
-  <center><button class="btn light-blue lighten-1" style="height: 35px;border-radius:20px;font-size:10px;text-transform:Capitalize;width:140px;margin-top:15px">View All</button></center>
+  <center><a href="package.php" class="btn light-blue lighten-1" style="height: 35px;border-radius:20px;font-size:10px;text-transform:Capitalize;width:140px;margin-top:15px">View All</a></center>
 </div>

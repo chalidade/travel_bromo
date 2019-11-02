@@ -88,16 +88,15 @@
         </ul>
       </li>
       <li class="treeview">
-        <a href="#"><i class="fa fa-gear"></i> <span>Preference</span>
+        <a href="#"><i class="fa fa-gear"></i> <span>Home Menu</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview-menu">
           <li><a href="home.php?id=preference_home">Home</a></li>
-          <li><a href="home.php?id=preference_package">Package</a></li>
           <li><a href="home.php?id=preference_gallery">Gallery</a></li>
-          <li><a href="home.php?id=preference_contact">Contact Us</a></li>
+          <li><a href="home.php?id=message">Message</a></li>
 
         </ul>
       </li>

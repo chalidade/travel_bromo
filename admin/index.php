@@ -11,7 +11,7 @@
 <h2>Travel Anda</h2>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="home.php?id=home" method="post">
+		<form action="proses/register.php" method="post">
 			<h1>Create Account</h1>
 			<!-- <div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>

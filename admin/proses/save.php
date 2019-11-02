@@ -8,14 +8,16 @@
     $keyStr       = implode(", ",$key);
     $value        = implode(", ", $input);
 
+    // echo $value;
     // Insert
     if ($input[0] == "''") {
       $query      = "INSERT INTO `$table` (`id`, $keyStr) VALUES ($value)";
+      // echo $query;
       if ($connect->query($query) === TRUE) {
         $last_id = $connect->insert_id;
         uploadPhoto($_FILES["photo"], $last_id, $table);
       } else {
-          // echo $connect->error;
+          echo $connect->error;
       }
       $connect->close();
     }
@@ -24,7 +26,11 @@
      else {
       echo "update";
     }
-   echo "<script>alert('Data Berhasil Disimpan');window.location = '../home.php?id=$page';</script>";
+    if ($page == "contacus") {
+      echo "<script>alert('Data Berhasil Disimpan');window.location = '../../$page.php';</script>";
+    } else {
+      echo "<script>alert('Data Berhasil Disimpan');window.location = '../home.php?id=$page';</script>";
+    }
  }
 
   function uploadPhoto($photo, $id, $table) {

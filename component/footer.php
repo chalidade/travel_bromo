@@ -14,10 +14,11 @@ var picker = new Lightpick({
     onSelect: function(start, end){
         var str = '';
         var cek = moment(end).add(1, 'days').startOf('day').from(start);
-        str += start ? start.format('Do MMMM YYYY') + ' to ' : '';
-        str += end ? end.format('Do MMMM YYYY') : '...';
+        str += start ? start.format('L') + ' to ' : '';
+        str += end ? end.format('L') : '...';
         document.getElementById('daterange').innerHTML = str;
         document.getElementById('durationform').value = cek;
+        document.getElementById('berangkat').value = str;
     }
 });
 </script>
@@ -69,6 +70,17 @@ function personInc()
     value = isNaN(value) ? 0 : value;
     value++;
     document.getElementById('personCount').value = value;
+    count();
+}
+
+function count() {
+  var adult = parseInt(document.getElementById('personCount').value, 10);
+  var child = parseInt(document.getElementById('childCount').value, 10);
+  var sum   = adult+child;
+  document.getElementById('person').value = sum+" Person";
+  document.getElementById('adult').value = adult;
+  document.getElementById('child').value = child;
+  document.getElementById('personOrder').value = adult+" Adult | "+child+" Child";
 }
 
 function personDec()
@@ -81,6 +93,7 @@ function personDec()
       value--;
     }
     document.getElementById('personCount').value = value;
+    count();
 }
 
 function childInc()
@@ -89,6 +102,7 @@ function childInc()
     value = isNaN(value) ? 0 : value;
     value++;
     document.getElementById('childCount').value = value;
+    count();
 }
 
 function childDec()
@@ -101,7 +115,15 @@ function childDec()
       value--;
     }
     document.getElementById('childCount').value = value;
+    count();
 }
+
+function jemput()
+{
+    var lokasi = document.getElementById('jemput').value;
+    document.getElementById('penjemputan').value = lokasi;
+}
+
 </script>
 </body>
 </html>
