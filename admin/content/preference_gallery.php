@@ -38,6 +38,11 @@
                                   <input type="text" class="form-control" name="data[]" id="name" placeholder="Name ..">
                                 </div>
                                 <div class="form-group">
+                                <label for="name">Name</label>
+                                  <textarea class="form-control" name="data[]">Deskripsi..</textarea>
+                                </label>
+                                </div>
+                                <div class="form-group">
                                   <label for="phone">Photo</label>
                                   <input type="hidden" class="form-control" name="data[]" id="name" placeholder="Name ..">
                                   <label for="file" style="border:solid 1px #242424;width:100%;padding:10px">Upload Photo</label>
@@ -86,10 +91,11 @@
                             <div class="modal-body" style="padding:20px">
                               <div class="row">
                                 <div class="col-md-6">
-                                  <img src="proses/image/message.png" style="width:100%">
+                                  <img src="proses/<?php echo $photo["photo"]; ?>" style="width:100%">
                                 </div>
                                 <div class="col-md-6">
                                     <h2 style="margin-top: 0px;"><?php echo $photo["nama"]; ?></h2>
+                                    <p><?php echo $photo["deskripsi"]; ?></p>
                                   </div>
                                 </div>
                             </div>

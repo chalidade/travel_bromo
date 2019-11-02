@@ -66,12 +66,16 @@
     session_start();
     include "admin/proses/koneksi.php";
     $_SESSION["desti"]        = $destination = $_POST["desti"];
-    $_SESSION["person"]       = $person      = $_POST["person"];
+    if ($_POST['go'] != '') {
+      $_SESSION["berangkat"]  = $berangkat = $_POST['go']."-".$_POST['home'];
+    } else {
+      $_SESSION["berangkat"]  = $berangkat   = $_POST["berangkat"];
+    }
     $_SESSION["penjemputan"]  = $penjemputan = $_POST["penjemputan"];
     $_SESSION["durasi"]       = $duration    = $_POST["durasi"];
-    $_SESSION["berangkat"]    = $berangkat   = $_POST["berangkat"];
     $_SESSION["adult"]        = $adult       = $_POST["adult"];
     $_SESSION["child"]        = $child       = $_POST["child"];
+    $_SESSION["person"]       = $person      = $adult + $child;
     $bayar = 0;
 
     foreach ($destination as $value) {

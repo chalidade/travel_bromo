@@ -1,6 +1,25 @@
 <?php
-include "component/header.php";
-?>
+error_reporting(0);
+ ?>
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <link type="text/css" rel="stylesheet" href="css/main.css"/>
+      <link type="text/css" rel="stylesheet" href="css/slideshow.css"/>
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" type="text/css" href="css/lightpick.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+
 <!-- Navigation -->
 <div class="nav2" style="z-index: 99; height: 70px; background: rgb(1, 87, 155);">
   <div class="row" style="margin-bottom:0px">
@@ -58,10 +77,25 @@ include "component/header.php";
     while ($data = mysqli_fetch_array($query)) {
      ?>
     <div class="col s4" style="border-radius:10px;margin-top:10px;margin-bottom:10px">
-      <div class="package" style="border-radius:10px">
-        <div id="myImg" class="fotoPaket" style="height:250px;border-radius: 10px;background:url('admin/proses/<?php echo $data['photo']; ?>');background-size:cover"></div>
+      <div class="package" style="border-radius:10px" data-toggle="modal" data-target="#myModal<?php echo $data['id']; ?>">
+        <div id="dest" name="destination" class="modal-trigger" href="#destination" class="fotoPaket" style="height:250px;border-radius: 10px;background:url('admin/proses/<?php echo $data['photo']; ?>');background-size:cover"></div>
       </div>
       </a>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal<?php echo $data['id']; ?>" role="dialog" style="margin-top:50px;display:table;padding-top:5px">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" style="z-index:999">&times;</button>
+            <div class="row" style="margin-top:50px">
+            <div class="col s6">
+              <img src="admin/proses/<?php echo $data["photo"]; ?>" alt="" style="width:100%">
+            </div>
+            <div class="col s6">
+              <h4 class="modal-title" style="font-size:20px;font-weight:800;text-align:left"><?php echo $data["nama"]; ?></h4>
+              <p style="text-align:left;margin-top:10px;font-size:12px"><?php echo $data["deskripsi"]; ?></p>
+            </div>
+          </div>
+      </div>
     </div>
     <?php } ?>
   </div>
